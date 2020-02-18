@@ -393,10 +393,12 @@ function getFullNames(/* CODE HERE */runners) {
 
 */
 
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(runners) {
 
   /* CODE HERE */
-
+  
+    return runners.map(runner => runner.first_name.toUpperCase());
+  
 }
 
 
@@ -427,10 +429,10 @@ function firstNamesAllCaps(/* CODE HERE */) {
 
 */
 
-function getRunnersByTShirtSize(/* CODE HERE */) {
+function getRunnersByTShirtSize(runners, tShirtSize) {
 
   /* CODE HERE */
-
+  return runners.filter(runner => runner.shirt_size === tShirtSize);
 }
 
 
@@ -455,10 +457,10 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
 
 */
 
-function tallyUpDonations(/* CODE HERE */) {
+function tallyUpDonations(runners) {
 
   /* CODE HERE */
-
+  return runners.reduce((total, runner) => total += runner.donation, 0);
 }
 
 
@@ -499,11 +501,11 @@ function counterMaker() {
 
   // BROKEN CODE STARTS
 
-  const count = 0;
+  let count = 0;
 
-  function counter() {
+  return function counter() {
 
-    ++count
+    return count ++
 
   }
 
@@ -553,9 +555,16 @@ function counterMaker() {
 
 */
 
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(limit) {
 
   /* CODE HERE */
+  let count = 0;
+
+  return function() {
+    if (count > limit) count = 0;
+    
+    return count++;
+  };
 
 }
 
