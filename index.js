@@ -268,10 +268,10 @@ function processProduct(num1,num2, callback) {
 
 */
 
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
 
   /* CODE HERE */
-
+     return callback(list.includes(item));
 }
 
 
@@ -314,10 +314,9 @@ function processContains(/* CODE HERE */) {
 
 */
 
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list, callback) {
 
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-
+  return callback(list.filter((item, index) => list.indexOf(item) === index));
 }
 
 
@@ -358,10 +357,14 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 
 */
 
-function getFullNames(/* CODE HERE */) {
+function getFullNames(/* CODE HERE */runners) {
 
   /* CODE HERE */
-
+  let runnersNameArray = [];
+  
+  runners.forEach(runner => runnersNameArray.push(`${runner.last_name}, ${runner.first_name}`));
+  
+  return runnersNameArray;
 }
 
 
